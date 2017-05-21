@@ -1,9 +1,9 @@
-package com.dripcloud.logging;
+package com.dcloud;
 
 import net.logstash.logback.appender.LogstashTcpSocketAppender;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,9 +16,11 @@ public class SbsLogbackAutoConfiguration {
 
     private @Value("${dcloud.logstash.url}") String destinationAddress;
 
+    private @Value("${dcloud.logstash.loggers}") String logstashLoggers;
+
     @Bean(name = "logstashAppender")
     public DripLogstashAppender logstashAppender() {
-        DripLogstashAppender appender = new DripLogstashAppender();
+        DripLogstashAppender appender = new DripLogstashAppender(logstashLoggers);
         appender.addDestination(destinationAddress);
         return appender;
     }
