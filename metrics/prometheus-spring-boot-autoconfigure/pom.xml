@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>logsbs-spring-boot-autoconfigure</artifactId>
+    <artifactId>prometheus-spring-boot-autoconfigure</artifactId>
 
-    <name>logsbs-spring-boot-autoconfigure</name>
+    <name>prometheus-spring-boot-autoconfigure</name>
     <description>autoconfig</description>
 
     <parent>
-        <artifactId>logsbs-spring-boot-starter-parent</artifactId>
+        <artifactId>prometheus-spring-boot-starter-parent</artifactId>
         <groupId>com.dcloud</groupId>
        <version>0.0.12</version>
     </parent>
@@ -50,6 +50,34 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
+        <dependency>	
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+       <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient</artifactId>
+            <version>0.0.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_common</artifactId>
+            <version>0.0.21</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_hotspot</artifactId>
+            <version>0.0.21</version>
+        </dependency>
 
 
         <dependency>
@@ -58,12 +86,6 @@
 
         </dependency>
 
-        <!-- LogBack dependencies -->
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-
-        </dependency>
 
     </dependencies>
 

@@ -1,1 +1,1 @@
-# LogSBS
+# the home of the spring-boot-starters
