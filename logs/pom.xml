@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.dcloud</groupId>
+	<artifactId>logsbs-spring-boot-starter-parent</artifactId>
+	<version>0.0.12</version>
+	<packaging>pom</packaging>
+
+	<name>logsbs-spring-boot-starter-parent</name>
+	<description>Custom starter for logging</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<logback.version>1.2.3</logback.version>
+		<logstash.logback.version>4.9</logstash.logback.version>
+		<jcloverslf4j.version>1.7.25</jcloverslf4j.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- LogBack dependencies -->
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>${logstash.logback.version}</version>
+				<optional>true</optional>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${jcloverslf4j.version}</version>
+				<optional>true</optional>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+	<modules>
+		<module>logsbs-spring-boot-autoconfigure</module>
+		<module>logsbs-spring-boot-starter</module>
+	</modules>
+
+
+
+</project>
